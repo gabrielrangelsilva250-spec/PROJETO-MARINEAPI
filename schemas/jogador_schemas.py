@@ -2,7 +2,7 @@ from datetime import date
 from typing import Optional
 from pydantic import BaseModel
 
-class JogadoresSchema(BaseModel):
+class JogadorSchema(BaseModel):
     id_jogador: Optional[int] = None
     nome: str
     ranking: Optional[str] = None
