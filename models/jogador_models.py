@@ -1,0 +1,14 @@
+from sqlalchemy import Column,Integer,String,Float,Date
+from core.configs import settings
+
+class jogadormodels(settings.DBBaseModel):
+    __tablename__"jogador" #Nome da tabela
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)  # id único
+    nome = Column(String(100), nullable=False)  # nome completo
+    ranking = Column(String(10), nullable=True)  # categoria do jogador
+    saldo_de_creditos = Column(Float, default=0.0)  # saldo atual
+    data_de_nascimento = Column(Date, nullable=True)  # nascimento
+    email = Column(String(256), nullable=False)  # contato principal-h
+
+    
