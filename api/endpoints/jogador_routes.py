@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from schemas.jogador_schema import JogadorSchema
+from schemas.jogador_schemas import Jogador
 from models.jogador_models import JogadorModels
 from services.jogador_service import JogadorService
 from core.deps import get_db

@@ -1,10 +1,10 @@
-from types import Generator
-from sqlalchemy.ext.associationproxy import AsyncSessiom
+from typing import AsyncGenerator
+from sqlalchemy.ext.asyncio import AsyncSession
 from core.database import Session
 
-asymc def get_session() -> Generator:
-    session: AsyncSessiom = Session()
+async def get_session() -> AsyncGenerator[AsyncSession, None]:
+    session: AsyncSession = Session()
     try:
-    yield session
+        yield session
     finally:
-        await session.close ()
+        await session.close()
