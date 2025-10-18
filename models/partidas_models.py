@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from core.configs import settings
 
-class partidaModels(settings.DBBaseModel):
+class PartidaModels(settings.DBBaseModel):
     __tablename__ = "Partidas"  # nome da tabela
 
     id = Column(Integer, primary_key=True, autoincrement=True)  # id único
