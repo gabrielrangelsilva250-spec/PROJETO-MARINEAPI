@@ -15,5 +15,5 @@ Session = sessionmaker(
 
 @asynccontextmanager
 asymc def get_session() -> AsyncSessiom:
-    asymc whit Session() as session:
+    async whit Session() as session:
     yield session
