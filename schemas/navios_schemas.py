@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import List
 from datetime import datetime
 
-class Navio(BaseModel):
+class NavioSchema(BaseModel):
     id: int
     jogador: str  # "usuario" ou "ia"
     tipo: str     # "porta-aviões", "submarino", etc.
