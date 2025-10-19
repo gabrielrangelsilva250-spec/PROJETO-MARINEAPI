@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from schemas.turno_schema import TurnoSchema
-from models.turno_models import TurnoModels
-from services.turno_service import TurnoService
+from schemas.turnos_schemas import TurnosSchema
+from models.turnos_models import TurnosModels
+from services.turnos_service import TurnosService
 from core.deps import get_db
 
 router = APIRouter(prefix="/turnos", tags=["Turnos"])

@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-class TurnoSchema(BaseModel):
+class TurnosSchema(BaseModel):
     id: int
     partidas_id: int
     jogador: str
