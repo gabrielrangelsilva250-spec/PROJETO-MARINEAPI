@@ -4,10 +4,10 @@ from datetime import datetime
 class PartidasSchema(BaseModel):
     id: int
     jogador_id: int
-    status: str  # "Em andamento", "finalizada"
-    vencedor: str  # "usuario", "ia", "empate"
+    status: str
+    vencedor: str
     iniciado: datetime
     finalizado: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True

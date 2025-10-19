@@ -10,4 +10,4 @@ class TurnosSchema(BaseModel):
     tempo_jogado: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
