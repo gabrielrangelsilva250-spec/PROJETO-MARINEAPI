@@ -1,3 +1,5 @@
+from fastapi import FastAPI, APIRouter
+from core.configs import settings
 from api.routes.jogador import router as jogadores_router
 from api.routes.mensagem import router as mensagens_router
 from api.routes.navios import router as navios_router
