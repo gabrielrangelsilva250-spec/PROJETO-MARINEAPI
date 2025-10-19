@@ -8,5 +8,5 @@ class PartidasModels(settings.DBBaseModel):
     jogador_id = Column(Integer, ForeignKey("jogador.id"))
     status = Column(String(20)) #"Em andamento", "finalizada"
     vencedor = Column(String(20)) # "usuario", "ia", "empate"
-    iniciado = Column(DateTime, default=datetime.utcnow)
-    finalizado = Column(DateTime, default=datetime.utcnow)
+    iniciado = Column(DateTime)
+    finalizado = Column(DateTime)
