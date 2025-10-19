@@ -1,17 +1,23 @@
-class NavioService:
-    def __init__(self, db):
+from sqlalchemy.orm import Session
+from models.navios_models import NaviosModels
+from schemas.navios_schemas import NavioCreate
+import json
+
+class NaviosService:
+    def __init__(self, db: Session):
         self.db = db
 
-    def posicionar_navio(self, dados):
-        novo_navio = NaviosModels(**dados.dict())
+    def criar_navio(self, dados: NavioCreate) -> NaviosModels:
+        navio_dict = dados.model_dump()
+        navio_dict["coordenadas"] = json.dumps(navio_dict["coordenadas"])  # salva como texto
+        novo_navio = NaviosModels(**navio_dict)
         self.db.add(novo_navio)
         self.db.commit()
         self.db.refresh(novo_navio)
         return novo_navio
 
-    def listar_por_jogador(self, partida_id, jogador):
-        return self.db.query(NaviosModels).filter_by(partida_id=partida_id, jogador=jogador).all()
+    def listar_navios(self) -> list[NaviosModels]:
+        return self.db.query(NaviosModels).all()
 
-    def verificar_afundado(self, navio_id):
-        navio = self.db.query(NaviosModels).filter_by(id=navio_id).first()
-        return navio.afundado if navio else None
+    def buscar_por_id(self, navio_id: int) -> NaviosModels | None:
+        return self.db.query(NaviosModels).filter_by(id=navio_id).first()
