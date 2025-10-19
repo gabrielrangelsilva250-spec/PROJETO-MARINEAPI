@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-class MensagemSchema(BaseModel):
+class MensagemSchemas(BaseModel):
     id: int
     partida_id: int
     remetente: str  # "usuario" ou "ia"
