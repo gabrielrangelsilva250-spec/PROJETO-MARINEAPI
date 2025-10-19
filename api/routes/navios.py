@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from schemas.navios_schemas import NavioSchemas
+from schemas.navios_schemas import Navio
 from models.navios_models import NaviosModels
 from services.navios_service import NavioService
 from core.deps import get_db

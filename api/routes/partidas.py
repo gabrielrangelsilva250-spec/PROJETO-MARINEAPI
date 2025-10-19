@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from schemas.partida_schema import PartidaSchema
-from models.partida_models import PartidaModels
-from services.partida_service import PartidaService
+from schemas.partidas_schema import PartidaSchema
+from models.partidas_models import PartidaModels
+from services.partidas_service import PartidaService
 from core.deps import get_db
 
 router = APIRouter(prefix="/partidas", tags=["Partidas"])

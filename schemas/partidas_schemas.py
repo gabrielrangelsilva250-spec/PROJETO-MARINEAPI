@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-class PartidaSchema(BaseModel):
+class PartidasSchema(BaseModel):
     id: int
     jogador_id: int
     status: str  # "Em andamento", "finalizada"

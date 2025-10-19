@@ -1,4 +1,4 @@
-class PartidaService:
+class PartidasService:
     def __init__(self, db: Session):
         self.db = db
 
