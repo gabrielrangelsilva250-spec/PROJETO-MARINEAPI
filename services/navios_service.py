@@ -1,13 +1,13 @@
 from sqlalchemy.orm import Session
 from models.navios_models import NaviosModels
-from schemas.navios_schemas import NavioCreate
+from schemas.navios_schemas import Navio
 import json
 
 class NaviosService:
     def __init__(self, db: Session):
         self.db = db
 
-    def criar_navio(self, dados: NavioCreate) -> NaviosModels:
+    def criar_navio(self, dados: Navio) -> NaviosModels:
         navio_dict = dados.model_dump()
         navio_dict["coordenadas"] = json.dumps(navio_dict["coordenadas"])  # salva como texto
         novo_navio = NaviosModels(**navio_dict)

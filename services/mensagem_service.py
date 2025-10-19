@@ -7,7 +7,7 @@ class MensagemService:
     def __init__(self, db: Session):
         self.db = db
 
-    def registrar_mensagem(self, dados: MensagemCreate) -> MensagemModels:
+    def registrar_mensagem(self, dados: MensagemSchemas) -> MensagemModels:
         nova_mensagem = MensagemModels(**dados.model_dump())
         self.db.add(nova_mensagem)
         self.db.commit()

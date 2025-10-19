@@ -1,13 +1,13 @@
 from sqlalchemy.orm import Session
 from models.turnos_models import TurnosModels
-from schemas.turnos_schemas import TurnoCreate
+from schemas.turnos_schemas import TurnosSchemas
 from typing import List
 
 class TurnosService:
     def __init__(self, db: Session):
         self.db = db
 
-    def registrar_turno(self, dados: TurnoCreate) -> TurnosModels:
+    def registrar_turno(self, dados: TurnosSchemas) -> TurnosModels:
         novo_turno = TurnosModels(**dados.model_dump())
         self.db.add(novo_turno)
         self.db.commit()
